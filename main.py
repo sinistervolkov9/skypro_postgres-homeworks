@@ -7,7 +7,7 @@
 
 import psycopg2
 import csv
-from settings import DATA_PATH_CUSTOMERS, DATA_PATH_EMPLOYERS, DATA_PATH_ORDERS
+from settings import DATA_PATH_CUSTOMERS, DATA_PATH_EMPLOYERS, DATA_PATH_ORDERS, PASSWORD
 
 # Открыть файл с данными
 # Считать данные
@@ -19,7 +19,7 @@ with psycopg2.connect(
     host="localhost",
     database="north",
     user="postgres",
-    password="7943"
+    password=PASSWORD
 ) as connection:
 
     # create cursor
