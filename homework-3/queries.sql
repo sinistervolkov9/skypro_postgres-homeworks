@@ -41,9 +41,7 @@ where customer_id not in (
 -- Этот запрос написать именно с использованием подзапроса.
 
 select distinct product_name from products
-where product_id in(
-	select product_id
-	from order_details
-	group by product_id
-	having sum(quantity) = 10
+where product_id = any(
+	select product_id from order_details
+	where quantity = 10
 );
