@@ -24,4 +24,11 @@ select * from discontinued_sales_products;
 -- Для 4-го пункта может потребоваться удаление ограничения, связанного с foreign_key.
 -- Подумайте, как это можно решить, чтобы связь с таблицей order_details все же осталась.
 
--- pass
+create table discontinued_products as
+select * from products where discontinued = 1;
+delete from products
+where discontinued = 1 and product_id not in
+(select product_id from order_details);
+delete from order_details
+where product_id not in
+(select product_id from products);

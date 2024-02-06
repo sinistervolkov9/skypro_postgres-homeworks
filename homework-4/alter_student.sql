@@ -33,7 +33,7 @@ set data type varchar(32);
 
 -- 6. Вставить три любых записи с автогенерацией идентификатора
 
-insert into student (student_id, first_name, last_name, birthday, phone)
+insert into student (student_id, first_name, last_name, birth_date, phone)
 values
 (default, 'Petr', 'Petrov', '1984-01-01', '8(987)654-32-10'),
 (default, 'Ivan', 'Ivanov', '1980-05-02', '8(900)789-45-48'),
